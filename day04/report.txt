@@ -1,0 +1,4 @@
+Aster: $1250.0
+Chala: $800.0
+Abebe: $700.0
+Biniam: $450.0

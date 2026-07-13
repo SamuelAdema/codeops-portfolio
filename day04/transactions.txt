@@ -1,0 +1,8 @@
+Abebe,500
+Chala,200
+Aster,1000
+Abebe,150
+Chala,600
+Aster,250
+Abebe,50
+Biniam,450

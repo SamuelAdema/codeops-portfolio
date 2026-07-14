@@ -56,13 +56,13 @@ class Product:
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
-        self.quantity = quantity
-
+        self.__quantity = quantity
+    @quantity.setter
     def restock(self, amount):
-        self.quantity += amount
-    
+        self.__quantity += amount
+    @quantity.getter
     def sell(self, amount):
-        self.quantity -= amount
+        self.__quantity -= amount
 
 n = Product("Laptop", 1000, 10)
 n.restock(5)   

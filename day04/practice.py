@@ -50,3 +50,20 @@ Book1.describe()
 
 Book2 = Book("The Great Gatsby", "F. Scott Fitzgerald", 180)
 Book2.describe()
+
+
+class Product:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+    def restock(self, amount):
+        self.quantity += amount
+    
+    def sell(self, amount):
+        self.quantity -= amount
+
+n = Product("Laptop", 1000, 10)
+n.restock(5)   
+n.sell(3)

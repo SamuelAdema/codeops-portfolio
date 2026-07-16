@@ -23,4 +23,11 @@ class savingAccount(Account):
 sami = savingAccount("samuel", 1500)
 sami.add_interest() 
 
+# Method Overriding
+class Accounts:
+    def statement(self):
+        print(f"{self.owner} : {self.balance} ETB")
 
+class currentAccounts(Accounts):
+    def statement(self):
+        print(" [current] {self.owner} : {self.balance} ETB")

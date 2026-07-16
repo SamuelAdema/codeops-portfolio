@@ -1,3 +1,4 @@
+# Class Extend
 class Account:
     def __init__(self, owner, balance = 0):
         self.owner = owner
@@ -10,3 +11,16 @@ class savingAccount(Account):
 
 sami = savingAccount("samuel", 1500)
 sami.deposit(2000)
+
+#Reusing The Parent
+class savingAccount(Account):
+    def __init__(self, owner, balance = 0, interest = 0.02):
+        super().__init__(owner, balance)
+        self.interest = interest
+    def add_interest(self):
+        self.balance += self.balance * self.interest
+
+sami = savingAccount("samuel", 1500)
+sami.add_interest() 
+
+

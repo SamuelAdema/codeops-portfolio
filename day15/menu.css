@@ -1,0 +1,103 @@
+/* =========================
+   Global Styles
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f5ed;
+    color: #333;
+}
+
+/* =========================
+   Menu Section
+========================= */
+
+.menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.menu h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Mobile First
+   One Column
+========================= */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* =========================
+   Menu Card
+========================= */
+
+.menu-card {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: 5px solid #c99a2e;
+    border-radius: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.menu-card h2 {
+    margin-top: 0;
+}
+
+.menu-card span {
+    font-weight: bold;
+}
+
+/* =========================
+   Tablet
+   Two Columns
+========================= */
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   Desktop
+   Three Columns
+========================= */
+
+@media (min-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-card {
+        transition: none;
+    }
+
+    .menu-card:hover {
+        transform: none;
+    }
+}

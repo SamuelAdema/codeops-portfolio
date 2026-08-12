@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My web page</title>
+</head>
+
+<body>
+
+    <form action="/reverse" method="post">
+        <label for="name"> Full Name </label>
+        <input id="name" name="name" required>
+        <label for="guests">Guests</label>
+        <input id="guests" name="guests"
+                type="number" min="1" max="20">
+        <button type="submit">Reserve</button>
+        <fieldset>
+        <legend>Your Details</legend>
+        <label for="name">Full Name</label>
+        <input id="name" name="name" required>
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" placeholder="09....">
+        </fieldset>
+
+    </form>
+
+
+</body>
+</html>

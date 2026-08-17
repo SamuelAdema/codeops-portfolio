@@ -1,0 +1,84 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+.output-area {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  background: #fafafa;
+}
+
+/* Dynamic styling classes applied via JS */
+.loading { color: #666; font-style: italic; }
+.error { color: #d32f2f; font-weight: bold; }
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-label { font-weight: bold; color: #555; }
+.flag-img {
+  width: 120px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}

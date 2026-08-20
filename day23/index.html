@@ -3,27 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Addis Watches</title>
+  <title>Addis Watches | Premium Timepieces</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Addis Watches ⌚</h1>
-    <p>Premium timepieces for every wrist.</p>
+    <div class="header-content">
+      <h1>Addis Watches</h1>
+      <p>Elevate your wrist with premium timepieces.</p>
+    </div>
   </header>
 
   <div class="app-layout">
-    <!-- Main Content: Controls & Grid -->
+    <!-- Main Content -->
     <main>
       <section class="controls">
-        <input type="text" id="search-input" placeholder="Search watches...">
-        <select id="brand-filter">
-          <option value="All">All Brands</option>
-          <option value="Seiko">Seiko</option>
-          <option value="Casio">Casio</option>
-          <option value="Rolex">Rolex</option>
-          <option value="Omega">Omega</option>
-        </select>
+        <div class="search-wrapper">
+          <input type="text" id="search-input" placeholder="Search collections...">
+        </div>
+        <!-- NEW: Brand buttons instead of select box -->
+        <div class="filter-wrapper" id="brand-filters">
+          <button class="brand-btn active" data-brand="All">All Brands</button>
+          <button class="brand-btn" data-brand="Seiko">Seiko</button>
+          <button class="brand-btn" data-brand="Casio">Casio</button>
+          <button class="brand-btn" data-brand="Rolex">Rolex</button>
+          <button class="brand-btn" data-brand="Omega">Omega</button>
+        </div>
       </section>
       
       <section id="product-grid" class="grid">
@@ -33,12 +41,17 @@
 
     <!-- Sidebar: Cart -->
     <aside class="cart-section">
-      <h2>Shopping Cart 🛒</h2>
-      <ul id="cart-list">
-        <!-- Cart items rendered here via JS -->
-      </ul>
-      <div class="cart-total">
-        <strong>Total: $<span id="cart-total-amount">0</span></strong>
+      <div class="cart-sticky">
+        <h2>Your Cart</h2>
+        <ul id="cart-list">
+          <!-- Cart items rendered here via JS -->
+        </ul>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong>$<span id="cart-total-amount">0</span></strong>
+        </div>
+        <!-- NEW: Telebirr Checkout Button -->
+        <button id="telebirr-btn" class="telebirr-btn">Pay with Telebirr</button>
       </div>
     </aside>
   </div>

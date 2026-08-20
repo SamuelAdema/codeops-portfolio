@@ -1,115 +1,61 @@
-:root {
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
-  --primary: #343a40;
-  --accent: #d4af37; /* Gold */
-  --border: #dee2e6;
-  --card-bg: #ffffff;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.5;
-}
-
-header {
-  background-color: var(--primary);
-  color: white;
-  padding: 1.5rem 2rem;
-  text-align: center;
-}
-
-header h1 { color: var(--accent); }
-
-.app-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .app-layout {
-    grid-template-columns: 3fr 1fr;
-  }
-}
-
-.controls {
+/* --- Brand Filter Buttons --- */
+.filter-wrapper {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
-}
-
-.controls input, .controls select {
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.controls input { flex: 1; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.card .emoji { font-size: 3rem; margin-bottom: 10px; }
-.card h3 { font-size: 1.1rem; margin-bottom: 5px; }
-.card p { color: #6c757d; margin-bottom: 15px; }
-.card button {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-.card button:hover { background: var(--accent); color: var(--primary); font-weight: bold; }
-
-.cart-section {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  height: fit-content;
-}
-
-#cart-list { list-style: none; margin-top: 15px; margin-bottom: 15px; }
-
-#cart-list li {
-  display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
 }
 
-.remove-btn {
-  background: #dc3545;
+.brand-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.brand-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--bg-header);
+}
+
+.brand-btn.active {
+  background: var(--bg-header);
+  color: white;
+  border-color: var(--bg-header);
+}
+
+/* --- Telebirr Button --- */
+.telebirr-btn {
+  margin-top: 20px;
+  width: 100%;
+  /* Telebirr's signature bright blue gradient */
+  background: linear-gradient(135deg, #0066ff, #00ccff); 
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: var(--font-body);
 }
 
-.cart-total { text-align: right; font-size: 1.2rem; }
+.telebirr-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+}
+
+/* Hide or dim the button when cart is empty */
+.telebirr-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

@@ -1,0 +1,61 @@
+/* --- Brand Filter Buttons --- */
+.filter-wrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.brand-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.brand-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--bg-header);
+}
+
+.brand-btn.active {
+  background: var(--bg-header);
+  color: white;
+  border-color: var(--bg-header);
+}
+
+/* --- Telebirr Button --- */
+.telebirr-btn {
+  margin-top: 20px;
+  width: 100%;
+  /* Telebirr's signature bright blue gradient */
+  background: linear-gradient(135deg, #0066ff, #00ccff); 
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: var(--font-body);
+}
+
+.telebirr-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+}
+
+/* Hide or dim the button when cart is empty */
+.telebirr-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

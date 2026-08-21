@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Classic Chronograph", "brand": "Seiko", "price": 250, "image": "⌚" },
+  { "id": 2, "name": "Diver Pro 200m", "brand": "Casio", "price": 85, "image": "⏱️" },
+  { "id": 3, "name": "Luxury Gold Date", "brand": "Rolex", "price": 5200, "image": "⌚" },
+  { "id": 4, "name": "Minimalist Leather", "brand": "Seiko", "price": 120, "image": "🕰️" },
+  { "id": 5, "name": "Digital Sport G", "brand": "Casio", "price": 60, "image": "⌚" },
+  { "id": 6, "name": "Space Explorer", "brand": "Omega", "price": 4500, "image": "⏱️" }
+]

@@ -50,8 +50,26 @@
           <span>Total</span>
           <strong>$<span id="cart-total-amount">0</span></strong>
         </div>
-        <!-- NEW: Telebirr Checkout Button -->
-        <button id="telebirr-btn" class="telebirr-btn">Pay with Telebirr</button>
+        <!-- Delivery Form & Telebirr Checkout -->
+        <!-- Delivery Form & Telebirr Checkout -->
+        <form id="delivery-form" class="delivery-form" novalidate>
+          <div class="input-group">
+            <input type="text" id="cust-name" placeholder="Full Name" maxlength="20">
+            <span class="error-msg" id="error-name">Name is required.</span>
+          </div>
+          
+          <div class="input-group">
+            <input type="text" id="cust-address" placeholder="Delivery Address" maxlength="30">
+            <span class="error-msg" id="error-address">Address is required.</span>
+          </div>
+          
+          <div class="input-group">
+            <input type="tel" id="cust-phone" placeholder="Phone (+251...)" maxlength="13">
+            <span class="error-msg" id="error-phone">Phone must start with +251 and have 9 digits.</span>
+          </div>
+
+          <button type="submit" id="telebirr-btn" class="telebirr-btn">Pay with Telebirr</button>
+        </form>
       </div>
     </aside>
   </div>

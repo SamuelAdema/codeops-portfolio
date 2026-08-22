@@ -4,9 +4,9 @@ Addis Watches is a premium e-commerce module project built with vanilla JavaScri
 
 ## Demo
 
-🎥 Loom Video: [Watch Project Demo]( )
+🎥 Loom Video: [Watch Project Demo](https://www.loom.com/share/de2bbad030774d3684417d08a980817f)
 
-🌐 Live Application: [View Live App]( )
+🌐 Live Application: [View Live App](https://addiswatch.netlify.app/)
 
 ## Features
 

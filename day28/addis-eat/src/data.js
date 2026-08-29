@@ -1,0 +1,10 @@
+export const categories = ["All", "Appetizer", "Main", "Drink"];
+
+export const dishes = [
+  { id: 1, name: "Doro Wat", price: 400, category: "Main", spicy: true },
+  { id: 2, name: "Shiro Tebs", price: 200, category: "Main", spicy: false },
+  { id: 3, name: "Lentil Sambusa", price: 50, category: "Appetizer", spicy: false },
+  { id: 4, name: "Kitfo", price: 500, category: "Main", spicy: true },
+  { id: 5, name: "Tej (Honey Wine)", price: 150, category: "Drink", spicy: false },
+  { id: 6, name: "Ethiopian Coffee", price: 30, category: "Drink", spicy: false }
+];

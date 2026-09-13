@@ -7,7 +7,7 @@ This project was built from scratch to demonstrate advanced React concepts, incl
 ## 🌐 Project Links
 
 * **Live Website:** [https://shopsphere-codeops.netlify.app](https://shopsphere-codeops.netlify.app)
-* **Demo Video:** [[Insert Your Video Link Here](https://www.loom.com/share/b0529641a39f47ce8062a4028d3f5d74)]
+* **Demo Video:** [[Video Link](https://www.loom.com/share/b0529641a39f47ce8062a4028d3f5d74)]
 
 ## ✨ Key Features
 

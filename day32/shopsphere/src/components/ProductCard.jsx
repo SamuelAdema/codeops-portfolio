@@ -7,25 +7,33 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="product-card">
-      <img src={product.thumbnail} alt={product.title} className="product-image" />
-      <h3>{product.title}</h3>
-      <p className="category">{product.category}</p>
-      <p className="rating">⭐ {product.rating}</p>
-      <p className="price">${product.price.toFixed(2)}</p>
+      <div className="product-image-wrapper">
+        <img src={product.thumbnail} alt={product.title} />
+      </div>
       
-      <div className="card-buttons">
-        <Link to={`/products/${product.id}`} className="btn-details" style={{ display: 'block', textDecoration: 'none', textAlign: 'center' }}>
-          View Details
-        </Link>
+      <div className="product-details">
+        <span className="product-badge">{product.category}</span>
+        <h3 className="product-title">{product.title}</h3>
         
-        {/* 3. Add the onClick event listener */}
-        <button 
-          className="btn-add" 
-          onClick={() => addToCart(product)}
-        >
-          Add to Cart
-        </button>
+        <div className="product-meta">
+          <span className="product-rating">⭐ {product.rating}</span>
+          <span className="product-price">${product.price}</span>
+        </div>
+        
+        <div className="product-actions">
+          {/* Your routing and context functions remain the same! */}
+          <Link to={`/products/${product.id}`} className="btn-outline-sm">
+            View Details
+          </Link>
+          <button 
+            onClick={() => {/* Keep your existing Add to Cart function here */}} 
+            className="btn-primary-sm"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );
+  
 }

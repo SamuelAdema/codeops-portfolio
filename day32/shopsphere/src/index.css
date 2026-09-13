@@ -343,3 +343,341 @@ button:hover {
 .about-content h3 { margin-top: 1.5rem; margin-bottom: 1rem; color: #333; }
 .about-content ul { margin-left: 2rem; margin-bottom: 1.5rem; }
 .about-content li { margin-bottom: 0.5rem; }
+
+/* =========================================
+   Modern UI Styles for Home & About Pages
+   ========================================= */
+
+/* Shared Divider */
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: #007bff;
+  margin: 10px auto 2rem auto;
+  border-radius: 2px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  padding: 4rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Modern Buttons --- */
+.btn-primary, .btn-secondary, .btn-outline {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #e53e3e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+  background-color: #fff5f5;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- Features Grid (Home) & About Grid --- */
+.section-header, .about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-grid, .about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card, .about-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #edf2f7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover, .about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3, .about-card h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.feature-card p, .about-card p {
+  color: #718096;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* --- Promo Section --- */
+.promo-section {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.promo-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.promo-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+/* --- About Page Specific --- */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  color: #4a5568;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+/* =========================================
+   Modern UI Styles for Products & Categories
+   ========================================= */
+
+/* --- Filter Controls (Products Page) --- */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid #edf2f7;
+  margin-bottom: 2rem;
+}
+
+.search-input, .category-select {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+}
+
+.search-input:focus, .category-select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* --- Grids --- */
+.products-grid, .categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Category Cards --- */
+.category-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card-ui {
+  background: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #edf2f7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card-ui:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+  border-color: #007bff;
+}
+
+/* --- Product Cards --- */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #edf2f7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-image-wrapper {
+  height: 200px;
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.product-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.product-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #2d3748;
+}
+
+/* --- Small Card Buttons --- */
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-primary-sm, .btn-outline-sm {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary-sm {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary-sm:hover {
+  background-color: #0056b3;
+}
+
+.btn-outline-sm {
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  text-decoration: none;
+}
+
+.btn-outline-sm:hover {
+  background-color: #f0f7ff;
+}

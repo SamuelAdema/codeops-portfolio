@@ -1,23 +1,33 @@
 import { createContext, useState } from 'react';
 
-// Create the Context
 export const CartContext = createContext();
 
-// Create the Provider Component
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Function to add an item (No annoying popup!)
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart((prevCart) => {
+      // Check if the item already exists in the cart
+      const existingItem = prevCart.find(item => item.id === product.id);
+      
+      if (existingItem) {
+        // If it exists, increase its quantity by 1
+        return prevCart.map(item => 
+          item.id === product.id 
+            ? { ...item, quantity: item.quantity + 1 } 
+            : item
+        );
+      }
+      
+      // If it's a new item, add it with a starting quantity of 1
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
   };
 
-  // Function to remove an item
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter(item => item.id !== productId));
   };
 
-  // Function to empty the cart after checkout
   const clearCart = () => {
     setCart([]);
   };

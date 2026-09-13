@@ -3,18 +3,16 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function Cart() {
-  // NEW: Pulling clearCart from context
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
 
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  // Calculate total price: (Item Price * Item Quantity)
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   const handleCheckout = () => {
     if (cart.length === 0) return alert("Your cart is empty!");
     alert("✅ Checkout successful! Thank you for your purchase.");
-    clearCart(); // This will empty the cart!
+    clearCart();
   };
-
-  // ... (Leave the rest of the return statement exactly the same as before)
 
   if (cart.length === 0) {
     return (
@@ -37,7 +35,15 @@ export default function Cart() {
             
             <div style={{ flex: 1, margin: '0 1.5rem' }}>
               <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>{item.title}</h3>
-              <p style={{ margin: 0, fontWeight: 'bold', color: '#007bff' }}>${item.price}</p>
+              
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <p style={{ margin: 0, fontWeight: 'bold', color: '#007bff' }}>${item.price}</p>
+                {/* Visual badge showing the quantity */}
+                <span style={{ fontSize: '0.9rem', color: '#718096', background: '#edf2f7', padding: '2px 8px', borderRadius: '12px', fontWeight: 'bold' }}>
+                  Qty: {item.quantity}
+                </span>
+              </div>
+
             </div>
             
             <button onClick={() => removeFromCart(item.id)} className="btn-secondary">

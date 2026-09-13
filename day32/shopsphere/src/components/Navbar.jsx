@@ -1,25 +1,38 @@
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // 1. Import our custom hook
+import { useContext, useState } from 'react';
+import { CartContext } from '../context/CartContext';
 
 export default function Navbar() {
-  // 2. Grab the totalItems from our context
-  const { totalItems } = useCart(); 
+  const { cart } = useContext(CartContext);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Calculate total items in the cart
+  const totalItems = cart ? cart.length : 0; 
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <h2>ShopSphere</h2>
+      <div className="nav-brand">
+        <Link to="/">ShopSphere</Link>
       </div>
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
-        
-        {/* 3. Display the dynamic totalItems variable */}
-        <li><Link to="/cart">Cart ({totalItems})</Link></li>
-        
-        <li><Link to="/about">About</Link></li>
-      </ul>
+
+      {/* Hamburger Button for Mobile */}
+      <button 
+        className="mobile-menu-btn" 
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        ☰
+      </button>
+
+      {/* Navigation Links */}
+      <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+        <Link to="/products" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+        <Link to="/categories" onClick={() => setIsMobileMenuOpen(false)}>Categories</Link>
+        <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+        <Link to="/cart" className="cart-link" onClick={() => setIsMobileMenuOpen(false)}>
+          🛒 Cart <span className="cart-badge">{totalItems}</span>
+        </Link>
+      </div>
     </nav>
   );
 }

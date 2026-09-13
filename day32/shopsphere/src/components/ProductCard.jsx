@@ -1,9 +1,10 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // 1. Import the hook
+import { CartContext } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
-  // 2. Extract the addToCart function from our context
-  const { addToCart } = useCart();
+  // Pull the addToCart function from your context
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-card">
@@ -21,12 +22,13 @@ export default function ProductCard({ product }) {
         </div>
         
         <div className="product-actions">
-          {/* Your routing and context functions remain the same! */}
           <Link to={`/products/${product.id}`} className="btn-outline-sm">
             View Details
           </Link>
+          
+          {/* Fixed Button: Now actually calls addToCart */}
           <button 
-            onClick={() => {/* Keep your existing Add to Cart function here */}} 
+            onClick={() => addToCart(product)} 
             className="btn-primary-sm"
           >
             Add to Cart
@@ -35,5 +37,4 @@ export default function ProductCard({ product }) {
       </div>
     </div>
   );
-  
 }

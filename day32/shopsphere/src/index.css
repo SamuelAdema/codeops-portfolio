@@ -681,3 +681,103 @@ button:hover {
 .btn-outline-sm:hover {
   background-color: #f0f7ff;
 }
+/* =========================================
+   Navbar & Mobile Responsiveness
+   ========================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.cart-badge {
+  background-color: #e53e3e;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #2d3748;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block; /* Show hamburger on mobile */
+  }
+  
+  .nav-links {
+    display: none; /* Hide standard menu on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active {
+    display: flex; /* Show when hamburger is clicked */
+  }
+
+  .nav-links a {
+    padding: 1rem 2rem;
+    width: 100%;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  /* Make filter bars stack on mobile */
+  .filter-controls {
+    flex-direction: column;
+  }
+  
+  .search-input, .category-select {
+    width: 100%;
+  }
+  
+  /* Shrink hero text on mobile */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}

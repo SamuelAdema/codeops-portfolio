@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function Cart() {
-  const { cart, removeFromCart } = useContext(CartContext);
+  // NEW: Pulling clearCart from context
+  const { cart, removeFromCart, clearCart } = useContext(CartContext);
 
-  // Calculate the total price of everything in the cart
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
-  // Checkout Function
   const handleCheckout = () => {
     if (cart.length === 0) return alert("Your cart is empty!");
     alert("✅ Checkout successful! Thank you for your purchase.");
-    // Note: If you created a clearCart() function in your context, you can call it here!
+    clearCart(); // This will empty the cart!
   };
+
+  // ... (Leave the rest of the return statement exactly the same as before)
 
   if (cart.length === 0) {
     return (

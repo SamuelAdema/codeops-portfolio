@@ -7,10 +7,9 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Function to add an item
+  // Function to add an item (No annoying popup!)
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
-    alert(`✅ ${product.title} has been added to your cart!`);
   };
 
   // Function to remove an item

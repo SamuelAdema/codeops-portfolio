@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { CartProvider } from './context/CartContext';
 
-// Import all our pages
+// Import Components
+import Navbar from './components/Navbar';
+
+// Import Pages
 import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
@@ -11,15 +13,11 @@ import Cart from './pages/Cart';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 
-import './index.css'; 
-
 function App() {
   return (
-    <div className="app-container">
+    <CartProvider>
       <Navbar />
-      
-      <main className="main-content">
-        {/* The Routes component acts like a switchboard */}
+      <main style={{ minHeight: '80vh' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
@@ -27,14 +25,10 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
-          
-          {/* The * catches any URL that doesn't match the ones above */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-
-      <Footer />
-    </div>
+    </CartProvider>
   );
 }
 

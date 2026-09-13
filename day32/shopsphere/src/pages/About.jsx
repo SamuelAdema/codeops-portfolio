@@ -1,25 +1,29 @@
 export default function About() {
   return (
     <div className="about-container">
-      <h1>About ShopSphere</h1>
-      
-      <div className="about-content">
-        <p>
-          <strong>ShopSphere</strong> is a modern e-commerce web application built as a capstone project 
-          to demonstrate advanced React.js development skills.
+      <div className="about-header">
+        <h1>About ShopSphere</h1>
+        <div className="divider"></div>
+        <p className="lead-text">
+          ShopSphere is a modern e-commerce platform designed to provide a seamless, lightning-fast shopping experience without page reloads.
         </p>
+      </div>
+
+      <div className="about-grid">
+        <div className="about-card">
+          <h3>🎯 Our Mission</h3>
+          <p>To connect people with the products they love through an intuitive, accessible, and beautiful web experience.</p>
+        </div>
         
-        <h3>Technical Highlights:</h3>
-        <ul>
-          <li><strong>React Router:</strong> Seamless, single-page-application navigation without page reloads.</li>
-          <li><strong>Context API:</strong> Global state management to handle complex shopping cart logic.</li>
-          <li><strong>Hooks:</strong> Extensive use of <code>useState</code> and <code>useEffect</code> to manage component lifecycles and API data fetching.</li>
-          <li><strong>REST APIs:</strong> Integration with DummyJSON for dynamic, real-world product population.</li>
-        </ul>
+        <div className="about-card">
+          <h3>💻 Technology</h3>
+          <p>Built completely from scratch using React 18, Vite, and React Router to demonstrate the power of Single Page Applications.</p>
+        </div>
         
-        <p style={{ marginTop: '2rem', color: '#666' }}>
-          Developed by a passionate frontend developer in 2026.
-        </p>
+        <div className="about-card">
+          <h3>🛒 Features</h3>
+          <p>Featuring live search, dynamic category filtering, price sorting, and a fully functional global shopping cart.</p>
+        </div>
       </div>
     </div>
   );

@@ -1,57 +1,63 @@
-import { useCart } from '../context/CartContext';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 export default function Cart() {
-  // 1. Pull the cart array and the remove function from Context
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, clearCart } = useContext(CartContext);
 
-  // 2. Calculate the total price of all items
+  // Calculate total price: (Item Price * Item Quantity)
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-  // 3. Conditional rendering: If the cart is empty, show a friendly message
+  const handleCheckout = () => {
+    if (cart.length === 0) return alert("Your cart is empty!");
+    alert("✅ Checkout successful! Thank you for your purchase.");
+    clearCart();
+  };
+
   if (cart.length === 0) {
     return (
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h2>Your cart is empty!</h2>
-        <Link to="/products" style={{ color: '#007bff', textDecoration: 'none', fontSize: '1.2rem' }}>
-          Go find some great products ←
-        </Link>
+      <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
+        <h2>Your Cart is Empty</h2>
+        <p style={{ color: '#718096', marginBottom: '2rem' }}>Looks like you haven't added anything yet.</p>
+        <Link to="/products" className="btn-primary">Start Shopping</Link>
       </div>
     );
   }
 
-  // 4. Render the cart items
   return (
-    <div className="cart-container">
-      <h1>Shopping Cart</h1>
+    <div style={{ maxWidth: '800px', margin: '2rem auto', padding: '1rem' }}>
+      <h1 style={{ marginBottom: '2rem' }}>Your Shopping Cart</h1>
       
-      <div className="cart-items">
-        {cart.map((item) => (
-          <div key={item.id} className="cart-item">
-            <img src={item.thumbnail} alt={item.title} className="cart-image" />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {cart.map((item, index) => (
+          <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #edf2f7', paddingBottom: '1rem' }}>
+            <img src={item.thumbnail} alt={item.title} style={{ width: '80px', height: '80px', objectFit: 'contain', background: '#f8fafc', borderRadius: '8px' }} />
             
-            <div className="cart-details">
-              <h3>{item.title}</h3>
-              <p>Price: ${item.price.toFixed(2)}</p>
-              <p>Quantity: {item.quantity}</p>
+            <div style={{ flex: 1, margin: '0 1.5rem' }}>
+              <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>{item.title}</h3>
+              
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <p style={{ margin: 0, fontWeight: 'bold', color: '#007bff' }}>${item.price}</p>
+                {/* Visual badge showing the quantity */}
+                <span style={{ fontSize: '0.9rem', color: '#718096', background: '#edf2f7', padding: '2px 8px', borderRadius: '12px', fontWeight: 'bold' }}>
+                  Qty: {item.quantity}
+                </span>
+              </div>
+
             </div>
             
-            <div className="cart-actions">
-              <p className="item-total">${(item.price * item.quantity).toFixed(2)}</p>
-              <button 
-                className="btn-remove" 
-                onClick={() => removeFromCart(item.id)}
-              >
-                Remove
-              </button>
-            </div>
+            <button onClick={() => removeFromCart(item.id)} className="btn-secondary">
+              Remove
+            </button>
           </div>
         ))}
       </div>
-      
-      <div className="cart-summary">
-        <h2>Total: ${totalPrice.toFixed(2)}</h2>
-        <button className="btn-checkout">Proceed to Checkout</button>
+
+      <div style={{ marginTop: '2rem', textAlign: 'right', padding: '2rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #edf2f7' }}>
+        <h2 style={{ margin: '0 0 1rem 0' }}>Total: ${totalPrice.toFixed(2)}</h2>
+        <button onClick={handleCheckout} className="btn-primary" style={{ width: '100%', maxWidth: '300px', fontSize: '1.1rem' }}>
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );

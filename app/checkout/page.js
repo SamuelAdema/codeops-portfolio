@@ -1,0 +1,9 @@
+export default function CheckoutPage() {
+  return (
+    <main>
+      <h1>Checkout</h1>
+      <p>Complete your order.</p>
+      <button>Place Order</button>
+    </main>
+  );
+}

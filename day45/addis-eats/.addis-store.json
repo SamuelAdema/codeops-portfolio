@@ -1,0 +1,86 @@
+{
+  "dishes": [
+    {
+      "id": "1",
+      "name": "Special Kitfo",
+      "description": "Finely minced lean beef seasoned with mitmita and niter kibbeh, served with ayib and gomen.",
+      "price": 650,
+      "category": "Traditional",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "2",
+      "name": "Doro Wat",
+      "description": "Slow-simmered spicy chicken stew in rich berbere sauce with a hard-boiled egg and fresh injera.",
+      "price": 580,
+      "category": "Stews",
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "3",
+      "name": "Beyaynetu Platter",
+      "description": "Colorful vegan combination of misir wat, kik alicha, shiro, cabbage, and beet salad on injera.",
+      "price": 420,
+      "category": "Vegan",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "4",
+      "name": "Shekla Tibs",
+      "description": "Sizzling cubed prime beef sauteed with rosemary, garlic, onions, and fresh green chili peppers.",
+      "price": 620,
+      "category": "Grilled",
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "5",
+      "name": "Tegabino Shiro",
+      "description": "Savory spiced chickpea flour stew served bubbling hot in a traditional clay pot with injera.",
+      "price": 350,
+      "category": "Vegan",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "6",
+      "name": "Awaze Tibs",
+      "description": "Tender beef strips glazed in fiery awaze paste, tomatoes, and red onions.",
+      "price": 590,
+      "category": "Grilled",
+      "image": "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord_1001",
+      "userId": "usr_31",
+      "customerName": "Almaz",
+      "items": [
+        {
+          "id": "1",
+          "name": "Special Kitfo",
+          "price": 650,
+          "quantity": 1
+        }
+      ],
+      "total": 650,
+      "status": "Preparing",
+      "createdAt": "2026-10-15T10:37:40.614Z"
+    },
+    {
+      "id": "ord_1002",
+      "userId": "usr_32",
+      "customerName": "Dawit",
+      "items": [
+        {
+          "id": "2",
+          "name": "Doro Wat",
+          "price": 580,
+          "quantity": 1
+        }
+      ],
+      "total": 580,
+      "status": "Received",
+      "createdAt": "2026-10-15T10:37:40.615Z"
+    }
+  ]
+}

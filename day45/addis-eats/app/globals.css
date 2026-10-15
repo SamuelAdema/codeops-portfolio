@@ -1,0 +1,360 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & RESET
+   ========================================================================== */
+:root {
+  --bg-primary: #faf8f5;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f5f2eb;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --brand: #d97706;
+  --brand-dark: #b45309;
+  --brand-deep: #451a03;
+  --border: #e7e5e4;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.06);
+  --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.08);
+  --shadow-hover: 0 14px 30px rgba(180, 83, 9, 0.14);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--brand);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR (Header)
+   ========================================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+header nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header nav > div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+}
+
+header nav a:first-child {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: -0.03em;
+  padding-left: 0;
+}
+
+header nav a:hover {
+  background-color: var(--bg-subtle);
+  color: var(--brand-dark);
+}
+
+/* Sign In link in navbar */
+header nav > div:last-child a {
+  background-color: var(--brand);
+  color: #ffffff !important;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+header nav > div:last-child a:hover {
+  background-color: var(--brand-dark);
+}
+
+/* ==========================================================================
+   3. MAIN CONTAINER & TYPOGRAPHY
+   ========================================================================== */
+body > div,
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+}
+
+p {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   4. HERO BANNER (Home Page)
+   ========================================================================== */
+main > section:first-of-type.relative,
+.rounded-3xl,
+.rounded-2xl {
+  background: linear-gradient(135deg, #1c1917 0%, #451a03 55%, #78350f 100%);
+  color: #ffffff;
+  padding: 3.5rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(69, 26, 3, 0.22);
+  margin-bottom: 2.5rem;
+}
+
+.rounded-3xl h1,
+.rounded-2xl h1 {
+  color: #ffffff;
+  font-size: 2.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rounded-3xl p,
+.rounded-2xl p {
+  color: #fde68a;
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin-bottom: 1.75rem;
+}
+
+.rounded-3xl span,
+.rounded-2xl span {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: #fcd34d;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rounded-3xl a,
+.rounded-2xl a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.rounded-3xl a:first-of-type,
+.rounded-2xl a:first-of-type {
+  background-color: #f59e0b;
+  color: #1c1917 !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.rounded-3xl a:first-of-type:hover,
+.rounded-2xl a:first-of-type:hover {
+  background-color: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.rounded-3xl a:last-of-type,
+.rounded-2xl a:last-of-type {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rounded-3xl a:last-of-type:hover,
+.rounded-2xl a:last-of-type:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* ==========================================================================
+   5. GRID LAYOUTS & CARDS (Menu, Features, Orders, Search)
+   ========================================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+article {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: #fbbf24;
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   6. FORMS, INPUTS, & BUTTONS
+   ========================================================================== */
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input:not([type="hidden"]),
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d6d3d1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+button {
+  background-color: var(--brand);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--brand-dark);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   7. UTILITY CLASSES USED ACROSS COMPONENTS
+   ========================================================================== */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+.space-y-12 > * + * { margin-top: 2.5rem; }
+
+.rounded-xl, .rounded-lg {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.border-t {
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+  margin-top: 0.85rem;
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.max-w-md { max-width: 460px; margin-left: auto; margin-right: auto; }
+.max-w-xl { max-width: 600px; margin-left: auto; margin-right: auto; }
+.max-w-2xl { max-width: 720px; margin-left: auto; margin-right: auto; }
+.text-center { text-align: center; }
